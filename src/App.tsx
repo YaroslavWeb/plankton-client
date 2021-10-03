@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { observer } from 'mobx-react'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
-function App() {
+import { Routing } from 'routing'
+import { Modal } from 'components/Modal'
+import MainStyles from 'styles/main'
+import FontStyles from 'styles/fonts'
+import { useStores } from 'hooks/useStores'
+
+const GlobalStyles = createGlobalStyle`
+  ${FontStyles}
+  ${MainStyles}
+`
+
+const App = observer(() => {
+  const { uiStore } = useStores()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <ThemeProvider theme={uiStore.theme}>
+      <Routing />
+      <Modal />
+      <GlobalStyles />
+    </ThemeProvider>
+  )
+})
 
-export default App;
+export default App
