@@ -67,6 +67,7 @@ export const Avatar = styled.img`
   display: flex;
   margin: 0 auto;
   height: 120px;
+  min-width: 108px;
   padding: 4px;
   background: ${({ theme }) => theme.colors.bg};
   border: 2px solid ${({ theme }) => theme.colors.secondary};

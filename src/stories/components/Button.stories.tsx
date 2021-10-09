@@ -13,7 +13,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 12px;
 `
-
 interface TemplateProps extends ButtonProps {
   text: string
 }
@@ -21,6 +20,10 @@ interface TemplateProps extends ButtonProps {
 export default {
   title: 'components/Button',
   component: Button,
+  args: {
+    text: 'Text',
+    size: Button.size.md,
+  },
   argTypes: {
     text: {
       control: { type: 'text' },
@@ -34,7 +37,7 @@ export default {
       control: { type: 'select' },
     },
     color: {
-      control: { type: null },
+      options: null,
     },
   },
 } as Meta
@@ -77,20 +80,14 @@ const Template: Story<TemplateProps> = (args) => {
 export const Solid = Template.bind({})
 Solid.args = {
   variant: Button.variant.solid,
-  size: Button.size.md,
-  text: 'Text',
 }
 
 export const Outline = Template.bind({})
 Outline.args = {
   variant: Button.variant.outline,
-  size: Button.size.md,
-  text: 'Text',
 }
 
 export const Ghost = Template.bind({})
 Ghost.args = {
   variant: Button.variant.ghost,
-  size: Button.size.md,
-  text: 'Text',
 }

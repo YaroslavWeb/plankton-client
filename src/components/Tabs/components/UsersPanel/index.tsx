@@ -59,7 +59,6 @@ export const UsersPanel = observer(() => {
                 <Button
                   onClick={handleOpenModal(ModalsEnum.userUpdate, user)}
                   variant={Button.variant.ghost}
-                  color={Button.color.secondary}
                 >
                   <C.FAIcon icon={faPencilAlt} />
                 </Button>{' '}
@@ -67,7 +66,6 @@ export const UsersPanel = observer(() => {
                 <Button
                   onClick={handleOpenModal(ModalsEnum.userDelete, user)}
                   variant={Button.variant.ghost}
-                  color={Button.color.secondary}
                 >
                   <C.FAIcon icon={faTrash} />
                 </Button>

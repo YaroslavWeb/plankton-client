@@ -1,0 +1,72 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="hooks/useForm" />
+
+
+# Form control hook
+
+```typescript jsx
+
+import { useForm } from 'hooks/useForm'
+
+...
+
+export const SomeComponent = () => {
+
+  // initial values for inputs
+  const initialForm = { username: 'something', age: '', location: '' }
+
+  const handler = () => {
+    // make some code
+    ...
+    cleanUp()
+  }
+
+/*
+ * @param {object} initialForm - initial values for inputs
+ * @param {function} handler - the handler that should be triggered after validation form
+ * 
+ * @returns:
+ * {object} form - initialForm with additional parameters: value, name, error
+ * {function} onSubmit - activates the handler after validation
+ * {function} onChange - changes the value of a field by name 
+ * {function} cleanUp - clears form values
+*/
+  const { form, onSubmit, onChange, cleanUp } = useForm(
+    initialForm,
+    handler
+  )
+
+...
+
+  return (
+    // Spred all needed props 
+    // name={form.username.name}
+    // value={form.username.value}
+    // error={form.username.error}
+    <TextInput {...form.username} onChange={onChange} placeholder="Name" />
+
+    <TextInput
+      {...form.age}
+      onChange={onChange}
+      placeholder="Age"
+      type="number"
+      min={16}
+      max={100}
+    />
+
+    <Select {...form.location} onChange={onChange} placeholder="Location">
+      {locationsStore.locations.map((location) => (
+        <Option key={location.id} value={location.id}>
+          {location.country} | {location.city}
+        </Option>
+      ))}
+    </Select>
+
+    <Button onClick={onSubmit}>
+      ADD
+    </Button>
+  )
+}
+
+```

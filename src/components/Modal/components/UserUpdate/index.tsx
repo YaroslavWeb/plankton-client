@@ -8,6 +8,7 @@ import { Select, Option } from 'components/Select'
 import { IUser } from 'interfaces/user'
 import { useForm } from 'hooks/useForm'
 import { useStores } from 'hooks/useStores'
+import { getUserAvatar } from 'helpers/getUserAvatar'
 
 export function UserUpdate() {
   const { uiStore, locationsStore, usersStore } = useStores()
@@ -66,9 +67,11 @@ export function UserUpdate() {
       <C.Divider />
       <C.Title2 weight="300">Avatar</C.Title2>
       <C.Avatar
-        src={`https://avatars.dicebear.com/api/human/${
-          form.name.value + form.age.value + form.location.value
-        }.svg`}
+        src={getUserAvatar(
+          form.name.value,
+          form.age.value,
+          form.location.value
+        )}
       />
       <C.Divider height={32} heightMob={32} />
       <S.WindowActions>

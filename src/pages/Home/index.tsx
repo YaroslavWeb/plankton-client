@@ -2,13 +2,14 @@ import { faCog } from '@fortawesome/free-solid-svg-icons'
 import { faReact } from '@fortawesome/free-brands-svg-icons'
 
 import * as C from 'styles/components'
-import { Tabs, TabPanel } from 'components/Tabs'
 import {
+  Tabs,
+  TabPanel,
   InfoPanel,
   LocationsPanel,
   StructurePanel,
   UsersPanel,
-} from 'components/Tabs/components'
+} from 'components/Tabs'
 
 export const HomePage = () => {
   return (

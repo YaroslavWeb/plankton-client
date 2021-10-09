@@ -5,6 +5,7 @@ import * as S from './styles'
 import { ModalComponents } from './components'
 import { useStores } from 'hooks/useStores'
 
+// Wrapper for modal windows
 export const Modal = observer(() => {
   const { uiStore } = useStores()
 

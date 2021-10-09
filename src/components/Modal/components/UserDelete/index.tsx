@@ -5,6 +5,7 @@ import * as C from 'styles/components'
 import { useStores } from 'hooks/useStores'
 import { Button } from 'components/Button'
 import { IUser } from 'interfaces/user'
+import { getUserAvatar } from 'helpers/getUserAvatar'
 
 export function UserDelete() {
   const { uiStore, usersStore } = useStores()
@@ -29,11 +30,7 @@ export function UserDelete() {
 
       <C.Divider />
       <C.Title2 weight="300">You want to kill me?</C.Title2>
-      <C.Avatar
-        src={`https://avatars.dicebear.com/api/human/${
-          data.name + data.age + data.locationId
-        }.svg`}
-      />
+      <C.Avatar src={getUserAvatar(data.name, data.age, data.locationId)} />
       <C.Divider height={32} heightMob={32} />
 
       <S.WindowActions>

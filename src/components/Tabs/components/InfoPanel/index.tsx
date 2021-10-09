@@ -6,6 +6,7 @@ import * as S from './styles'
 import * as C from 'styles/components'
 import { useStores } from 'hooks/useStores'
 import { IUser } from 'interfaces/user'
+import { getUserAvatar } from 'helpers/getUserAvatar'
 
 export const InfoPanel = observer(() => {
   const { usersStore, locationsStore } = useStores()
@@ -23,9 +24,7 @@ export const InfoPanel = observer(() => {
       {usersStore.users.map((user: IUser) => (
         <S.Card key={user.id}>
           <S.CardAvatar
-            src={`https://avatars.dicebear.com/api/human/${
-              user.name + user.age + user.locationId
-            }.svg`}
+            src={getUserAvatar(user.name, user.age, user.locationId)}
           />
           <table>
             <tbody>

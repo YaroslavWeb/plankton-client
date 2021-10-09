@@ -8,6 +8,7 @@ import { Select, Option } from 'components/Select'
 import { useStores } from 'hooks/useStores'
 import { useForm } from 'hooks/useForm'
 import { IUser } from 'interfaces/user'
+import { getUserAvatar } from 'helpers/getUserAvatar'
 
 export const UserCreate = () => {
   const { uiStore, usersStore, locationsStore } = useStores()
@@ -15,7 +16,6 @@ export const UserCreate = () => {
 
   const handleClose = () => {
     uiStore.closeModal()
-    cleanUp()
   }
 
   const handleCreate = (values: typeof initialForm) => {
@@ -32,10 +32,7 @@ export const UserCreate = () => {
     handleClose()
   }
 
-  const { form, onSubmit, onChange, cleanUp } = useForm(
-    initialForm,
-    handleCreate
-  )
+  const { form, onSubmit, onChange } = useForm(initialForm, handleCreate)
 
   return (
     <S.Window>
@@ -65,9 +62,11 @@ export const UserCreate = () => {
       <C.Divider />
       <C.Title2 weight="300">Avatar</C.Title2>
       <C.Avatar
-        src={`https://avatars.dicebear.com/api/human/${
-          form.name.value + form.age.value + form.location.value
-        }.svg`}
+        src={getUserAvatar(
+          form.name.value,
+          form.age.value,
+          form.location.value
+        )}
       />
       <C.Divider height={32} heightMob={32} />
       <S.WindowActions>

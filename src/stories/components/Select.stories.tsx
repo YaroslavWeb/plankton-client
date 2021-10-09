@@ -2,11 +2,11 @@ import { ChangeEvent, useCallback, useState } from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 
 import { locationsData } from './mockData/locations'
-import { Select, Option } from 'components/Select'
+import { Select as SelectComponent, Option } from 'components/Select'
 
 export default {
   title: 'components/inputs/Select',
-  component: Select,
+  component: SelectComponent,
   args: {
     placeholder: 'Example Select',
     name: 'name',
@@ -37,7 +37,7 @@ interface TemplateProps {
   error: string
 }
 
-export const Default: Story<TemplateProps> = (args) => {
+export const Select: Story<TemplateProps> = (args) => {
   const [value, setValue] = useState('')
 
   const onChange = useCallback(
@@ -46,9 +46,8 @@ export const Default: Story<TemplateProps> = (args) => {
     },
     []
   )
-
   return (
-    <Select
+    <SelectComponent
       value={value}
       onChange={onChange}
       placeholder={args.placeholder}
@@ -60,6 +59,6 @@ export const Default: Story<TemplateProps> = (args) => {
           {location.country} | {location.city}
         </Option>
       ))}
-    </Select>
+    </SelectComponent>
   )
 }

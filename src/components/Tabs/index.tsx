@@ -6,6 +6,7 @@ interface AppTabsProps {
   children: ReactElement[]
 }
 
+// Controls the display of transmitted panels and shows the active
 export const Tabs = ({ children }: AppTabsProps) => {
   const [activeTab, setActiveTab] = useState<ReactElement>()
 
@@ -41,3 +42,10 @@ interface AppTabPanelProps {
 export const TabPanel = ({ children }: AppTabPanelProps) => {
   return children
 }
+
+export {
+  InfoPanel,
+  LocationsPanel,
+  StructurePanel,
+  UsersPanel,
+} from './components'

@@ -14,7 +14,7 @@ const theme = {
     dangerLight: '#ef5350 ',
 
     white: '#E5E4E8',
-    black: '#E5E4E8',
+    black: '#19191B',
 
     error: '#f46666',
     overlay: 'rgba(56, 56, 56, 0.5)',
@@ -47,17 +47,17 @@ const theme = {
   },
 } as const
 
-export const darkTheme = {
-  colors: {
-    bg: '#19191B',
-    font: '#E5E4E8',
-  },
-}
-
 export const lightTheme = {
   colors: {
     bg: '#E5E4E8',
     font: '#19191B',
+  },
+}
+
+export const darkTheme = {
+  colors: {
+    bg: '#19191B',
+    font: '#E5E4E8',
   },
 }
 

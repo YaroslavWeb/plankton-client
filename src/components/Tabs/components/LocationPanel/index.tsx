@@ -49,7 +49,6 @@ export const LocationsPanel = observer(() => {
                 <Button
                   onClick={handleOpenModal(ModalsEnum.locationUpdate, location)}
                   variant={Button.variant.ghost}
-                  color={Button.color.secondary}
                 >
                   <C.FAIcon icon={faPencilAlt} />
                 </Button>{' '}
@@ -57,7 +56,6 @@ export const LocationsPanel = observer(() => {
                 <Button
                   onClick={handleOpenModal(ModalsEnum.locationDelete, location)}
                   variant={Button.variant.ghost}
-                  color={Button.color.secondary}
                 >
                   <C.FAIcon icon={faTrash} />
                 </Button>

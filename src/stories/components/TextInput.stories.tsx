@@ -1,11 +1,11 @@
 import { ChangeEvent, useCallback, useState } from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 
-import { TextInput } from 'components/TextInput'
+import { TextInput as TextInputComponent } from 'components/TextInput'
 
 export default {
   title: 'components/inputs/TextInput',
-  component: TextInput,
+  component: TextInputComponent,
   args: {
     placeholder: 'Example Input',
     name: 'name',
@@ -36,7 +36,7 @@ interface TemplateProps {
   error: string
 }
 
-export const Default: Story<TemplateProps> = (args) => {
+export const TextInput: Story<TemplateProps> = (args) => {
   const [value, setValue] = useState('')
 
   const onChange = useCallback(
@@ -47,7 +47,7 @@ export const Default: Story<TemplateProps> = (args) => {
   )
 
   return (
-    <TextInput
+    <TextInputComponent
       value={value}
       onChange={onChange}
       {...args}
@@ -57,3 +57,5 @@ export const Default: Story<TemplateProps> = (args) => {
     />
   )
 }
+
+TextInput.storyName = 'TextInput'

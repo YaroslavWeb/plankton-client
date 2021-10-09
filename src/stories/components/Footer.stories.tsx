@@ -1,10 +1,10 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
 
-import { Footer } from 'components/Footer'
+import { Footer as FooterComponent } from 'components/Footer'
 
 export default {
   title: 'components/Footer',
-  component: Footer,
+  component: FooterComponent,
 } as Meta
 
-export const Default: Story = () => <Footer />
+export const Footer: Story = () => <FooterComponent />

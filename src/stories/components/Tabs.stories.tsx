@@ -1,14 +1,14 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
 
-import { Tabs, TabPanel } from 'components/Tabs'
+import { Tabs as TabsComponent, TabPanel } from 'components/Tabs'
 
 export default {
   title: 'components/Tabs',
-  component: Tabs,
+  component: TabsComponent,
 } as Meta
 
-export const Default: Story = () => (
-  <Tabs>
+export const Tabs: Story = () => (
+  <TabsComponent>
     <TabPanel id="tab1" tabTitle="Example1" active>
       <p>Some Content - TAB #1</p>
     </TabPanel>
@@ -18,5 +18,5 @@ export const Default: Story = () => (
     <TabPanel id="tab3" tabTitle="Example3">
       <p>Some Content - TAB #3</p>
     </TabPanel>
-  </Tabs>
+  </TabsComponent>
 )

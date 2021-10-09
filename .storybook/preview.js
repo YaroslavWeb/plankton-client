@@ -31,7 +31,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Guideline', 'Components', 'Hooks'],
+      order: ['Guideline', ['Introduction', 'Architecture', 'Stories'], 'Hooks'],
     },
   },
 }

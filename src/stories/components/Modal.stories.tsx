@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 
-import { Modal } from 'components/Modal'
+import { Modal as ModalComponent } from 'components/Modal'
 import { useStores } from 'hooks/useStores'
 import { ModalsEnum } from 'interfaces/ui'
 import { usersData } from './mockData/users'
@@ -9,7 +9,7 @@ import { locationsData } from './mockData/locations'
 
 export default {
   title: 'components/Modal',
-  component: Modal,
+  component: ModalComponent,
   args: {
     isOpen: true,
     window: ModalsEnum.userCreate,
@@ -27,7 +27,7 @@ interface TemplateProps {
   window: ModalsEnum
 }
 
-export const Default: Story<TemplateProps> = (args) => {
+export const Modal: Story<TemplateProps> = (args) => {
   const { uiStore } = useStores()
 
   const getMockData = useCallback(() => {
@@ -53,5 +53,5 @@ export const Default: Story<TemplateProps> = (args) => {
     }
   }, [args.isOpen, args.window, getMockData, uiStore])
 
-  return <Modal />
+  return <ModalComponent />
 }

@@ -15,7 +15,6 @@ export const LocationUpdate = () => {
 
   const handleClose = () => {
     uiStore.closeModal()
-    cleanUp()
   }
 
   const handleUpdate = (values: typeof initialForm) => {
@@ -30,10 +29,7 @@ export const LocationUpdate = () => {
     handleClose()
   }
 
-  const { form, onSubmit, onChange, cleanUp } = useForm(
-    initialForm,
-    handleUpdate
-  )
+  const { form, onSubmit, onChange } = useForm(initialForm, handleUpdate)
 
   return (
     <S.Window>

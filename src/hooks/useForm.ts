@@ -3,6 +3,18 @@ import { ChangeEvent, useCallback, useState } from 'react'
 import { IForm, IInitialForm } from 'interfaces/form'
 import theme from 'styles/theme'
 
+/*
+ * Form control hook
+ * @param {object} initialForm - initial values for inputs
+ * @param {function} handler - the handler that should be triggered after validation form
+ *
+ * @returns:
+ * {object} form - initialForm with additional parameters: value, name, error
+ * {function} onSubmit - activates the handler after validation
+ * {function} onChange - changes the value of a field by name
+ * {function} cleanUp - clears form values
+ */
+
 const convertToForm = <T extends IInitialForm>(initialForm: T): IForm<T> =>
   Object.entries(initialForm).reduce((acc, [key, value]) => {
     return {
