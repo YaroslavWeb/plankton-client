@@ -1,5 +1,5 @@
 import { ChangeEvent, useCallback, useState } from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { Story, Meta } from '@storybook/react'
 
 import { locationsData } from './mockData/locations'
 import { Select as SelectComponent, Option } from 'components/Select'

@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { Story, Meta } from '@storybook/react'
 
 import { Modal as ModalComponent } from 'components/Modal'
 import { useStores } from 'hooks/useStores'

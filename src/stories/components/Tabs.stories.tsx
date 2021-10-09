@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { Story, Meta } from '@storybook/react'
 
 import { Tabs as TabsComponent, TabPanel } from 'components/Tabs'
 
