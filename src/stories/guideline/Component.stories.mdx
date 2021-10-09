@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guideline/Component" />
+
+
+# How create component?
+
+### 1. File structure
+  * **index.tsx** - functional component, not exported by defualt
+  * **styles.tsx**[optional] - styled components for **index**
+  * **/components**[optional] - subcomponents that are closely related to **index**
+    * **/components/index.tsx** - export import all your subcomponents
+    * **/components/styles.tsx**[optional] - repeted styles for subcomponents
+
+
+### 2. index.tsx
+```typescript jsx
+// Import packages
+import { useEffect, useCallback } from 'react'
+import { observer } from 'mobx-react'
+
+// /src imports
+// Relative paths
+import * as S from './styles'
+import { SomethingFromComponents } from './components'
+// Absolute paths
+import * as C from 'styles/components'
+import { useStores } from 'hooks/useStores'
+
+...
+
+export const SomeComponent = observer(() => {
+  
+...
+
+})
+```

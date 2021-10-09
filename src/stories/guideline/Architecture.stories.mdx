@@ -5,22 +5,42 @@ import { Meta } from '@storybook/addon-docs';
 
 # Architecture of React App 
 
-## 1. Entry point *index.tsx*
+## 1. Entry point index.tsx
   * *StrictMode* is a tool for highlighting potential problems in an application.
   * *Provider* Mobx Stores
-  * *BrowserRouter*
-## 2. App component *App.tsx*
+  * *BrowserRouter* A **Router** that uses the HTML5 history API (pushState, replaceState and the popstate event) to keep your UI in sync with the URL
+## 2. App component App.tsx
   * *Create global styles* for app. Includes Fonts and base styles
   * *ThemeProvider* for switching between light and dark theme. Controlled by Mobx Store.
   * *Routing* includes all project urls
   * Add *GlobalStyles* to project
-## 3. */styles*
-## 4. */stores*
-## 5. */routing*
-## 6. */layouts*
-## 6. */pages*
-## 7. */components*
-## 8. */hooks*
-## 9. */interfaces*
-## 10. */assets*
-## 11. */stories*
+## 3. /styles
+  ### 3.5. theme.ts
+  All colors, numeric variables and css properties. Used for Styled components and another places
+  ### 3.2. main.ts 
+  All normalize and base styles
+  ### 3.3. fonts.ts
+  Loading local fonts via @font-face
+  ### 3.4. components.ts 
+  Contains micro components. 
+  
+  For example: Titles, text, separators, containers, etc.
+  ### 3.5. animations.ts 
+  Animations created by keyframes css
+## 4. /stores
+  ### 4.1 index.ts
+  Root storage with all entities
+  ### 4.2 /entityName
+  Entity - a thing with distinct and independent existence.
+## 5. /routing
+  Describes the structure of urls in the project
+## 6. /layouts
+  Route wrappers. May contain repeating page elements. 
+
+  For example: header, footer, container, etc.
+## 6. /pages
+## 7. /components
+## 8. /hooks
+## 9. /interfaces
+## 10. /assets
+## 11. /stories

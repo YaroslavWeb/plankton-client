@@ -17,7 +17,7 @@ const theme = {
     black: '#19191B',
 
     error: '#f46666',
-    overlay: 'rgba(56, 56, 56, 0.5)',
+    overlay: '#383838',
   },
 
   // Source: https://getbootstrap.com/docs/4.0/layout/grid/

@@ -1,17 +1,16 @@
-2. Импорт всего экспортов 
-  import * as S from './styles'
-  import * as C from 'styles/components'
+# Plankton - Simple CRUD application
 
-3. как типизировать theme из пропсов
-4. helper на transition
-5. Хук для модалки. Баг с cleanUp в форме если закрываем по методу Modal
+![alt text](https://i.ibb.co/0fMfzn6/Screenshot-20211004-221339.png)
 
-If you want to write it to the DOM, pass a string instead: animated="true" or animated={value.toString()}.
+## Stack
+- React
+- MobX
+- TypeScript
+- Styled Components
+- Storybook
+- DiceBear Avatars
+- Font Awesome
 
-6. НУжна нулл модалка
-
-TODO: 
-3. СТорибук
-3.1 Коментарии
-4. Деплой
-5. Код ревью
+## Description
+* View, сreate and modify: user and location data.
+* Switch theme mode by button in header to light and dark.
