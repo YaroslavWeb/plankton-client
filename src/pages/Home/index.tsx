@@ -12,6 +12,8 @@ import {
 } from 'components/Tabs'
 
 export const HomePage = () => {
+
+
   return (
     <>
       <div>
