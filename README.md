@@ -2,6 +2,10 @@
 
 ![alt text](https://i.ibb.co/0fMfzn6/Screenshot-20211004-221339.png)
 
+## Live Demo
+client - [plankton-client](https://plankton-client.herokuapp.com/)
+storybook - [plankton-storybook](https://plankton-storybook.herokuapp.com/)
+
 ## Stack
 - React
 - MobX
