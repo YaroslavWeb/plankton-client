@@ -20,8 +20,8 @@ export const HomePage = () => {
         <C.Title1>Simple CRUD App.</C.Title1>
         <C.Divider height={24} heightMob={12} />
         <C.Title2>
-          <C.FAIcon icon={faCog} color="#a8324a" animated /> Technologies{' '}
-          <C.FAIcon icon={faCog} color="#a8324a" animated />
+          <C.FAIcon icon={faCog} color="#a8324a" $animated /> Technologies{' '}
+          <C.FAIcon icon={faCog} color="#a8324a" $animated />
         </C.Title2>
         <C.Divider />
         <ul>

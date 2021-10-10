@@ -47,16 +47,16 @@ export const SupText = styled.sup`
 `
 
 interface FAIconProps extends FontAwesomeIconProps {
-  animated?: boolean
+  $animated?: boolean;
 }
 
-export const FAIcon = styled(FontAwesomeIcon).attrs<FAIconProps>(
+export const FAIcon = styled(FontAwesomeIcon).attrs<FontAwesomeIconProps>(
   ({ icon }) => ({
     icon,
   })
 )<FAIconProps>`
-  ${({ animated = false }) =>
-    animated
+  ${({ $animated = '' }) =>
+    $animated
       ? css`
           animation: ${spin} 4s infinite linear;
         `

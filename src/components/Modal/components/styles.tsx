@@ -7,7 +7,7 @@ export const BaseWindow = styled.div.attrs(() => ({
   position: relative;
   background-color: ${({ theme }) => theme.colors.bg};
   color: ${({ theme }) => theme.colors.font};
-  width: ${theme.size.modal.width}px;
+  width: ${theme.sizes.modal.width}px;
   max-width: 90%;
 
   @media ${theme.media.medium} {

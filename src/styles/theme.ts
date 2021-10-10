@@ -1,4 +1,6 @@
-const theme = {
+import { ITheme } from "styled-components"
+
+const theme: ITheme = {
   colors: {
     primary: '#7986cb',
     primaryDark: '#5c6bc0',
@@ -29,7 +31,7 @@ const theme = {
   },
 
   // in px
-  size: {
+  sizes: {
     header: { height: 56 },
     container: { width: 1200 },
     footer: { height: 128 },

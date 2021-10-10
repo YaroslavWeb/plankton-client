@@ -1,10 +1,11 @@
 import { IUser } from './user'
 import { ILocation } from './location'
+import { ITheme } from 'styled-components'
 
 export interface IUI {
   modal: IModal
   isLight: boolean
-  theme: any
+  theme: ITheme
 }
 
 export interface IModal {
@@ -23,3 +24,4 @@ export enum ModalsEnum {
   userDelete = 'UserDelete',
   userUpdate = 'UserUpdate',
 }
+

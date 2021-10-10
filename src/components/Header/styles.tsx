@@ -6,7 +6,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: ${theme.size.header.height}px;
+  height: ${theme.sizes.header.height}px;
   padding: 0 16px;
   background-color: ${theme.colors.secondary};
   color: ${theme.colors.primary};
