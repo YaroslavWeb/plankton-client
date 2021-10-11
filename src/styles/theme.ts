@@ -1,9 +1,17 @@
-import { ITheme } from "styled-components"
+import { DefaultTheme } from "styled-components"
 
-const theme: ITheme = {
+export enum ThemeType  {
+  default = "default",
+  light = "light",
+  dark = "dark"
+} 
+
+const theme = {
+  type: ThemeType.default,
+
   colors: {
     primary: '#7986cb',
-    primaryDark: '#5c6bc0',
+    primaryDark: '#5c6bc0', //primaryDarken
     primaryLight: '#9fa8da',
     secondary: '#2b2b2b',
     secondaryDark: '#1f1f1f',
@@ -17,9 +25,12 @@ const theme: ITheme = {
 
     white: '#E5E4E8',
     black: '#19191B',
-
+    
     error: '#f46666',
     overlay: '#383838',
+
+    bg: '#ffffff',
+    font: '#000000',
   },
 
   // Source: https://getbootstrap.com/docs/4.0/layout/grid/
@@ -38,29 +49,38 @@ const theme: ITheme = {
     modal: { width: 540 },
   },
 
-  // in MS
+  // in ms
   durations: {
-    default: 300,
+    ms300: 300,
   },
 
+  // z-index
   order: {
     header: 50,
     modal: 100,
   },
-} as const
+}
 
 export const lightTheme = {
+  ...theme,
+  type: ThemeType.light,
+
   colors: {
+    ...theme.colors,
     bg: '#E5E4E8',
     font: '#19191B',
   },
 }
 
 export const darkTheme = {
+  ...theme,
+  type: ThemeType.dark,
+
   colors: {
+    ...theme.colors,
     bg: '#19191B',
     font: '#E5E4E8',
   },
 }
 
-export default theme
+export type ThemeBase = typeof theme

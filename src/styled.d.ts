@@ -1,24 +1,8 @@
 import 'styled-components';
+import { ThemeType, ThemeBase } from 'styles/theme';
 
 declare module 'styled-components' {
-  export interface ITheme {
-    colors: {
-      [key: string]: string
-    },
-    media: {
-      [key: string]: string
-    },
-    sizes: {
-      [key: string]: {
-        height?: number
-        width?: number
-      }
-    },
-    durations: {
-      [key: string]: number
-    }
-    order: {
-      [key: string]: number
-    }
+  export interface DefaultTheme extends ThemeBase {
+    type: ThemeType
   }
 }

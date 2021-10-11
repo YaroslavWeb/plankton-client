@@ -1,15 +1,13 @@
 import styled from 'styled-components'
 
-import theme from 'styles/theme'
-
 export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: ${theme.sizes.header.height}px;
+  height: ${({ theme }) => theme.sizes.header.height}px;
   padding: 0 16px;
-  background-color: ${theme.colors.secondary};
-  color: ${theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.primary};
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   font-size: 24px;
   position: sticky;
@@ -20,3 +18,4 @@ export const Header = styled.header`
 export const HeaderTitle = styled.div`
   display: flex;
 `
+

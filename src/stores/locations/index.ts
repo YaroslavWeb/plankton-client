@@ -15,7 +15,7 @@ export class LocationsStore {
   }
 
   getFullLocation(id: string) {
-    return this.locations.find((item) => item.id === id) || this.locations[0]
+    return this.locations.find((item) => item.id === id) || undefined
   }
 
   createLocation(location: ILocation) {

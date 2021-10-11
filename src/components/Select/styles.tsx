@@ -22,7 +22,7 @@ export const SelectWrapper = styled.div<SelectProps>`
     top: 10px;
     clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 
-    transition: ${({ theme }) => theme.durations.default}ms ease
+    transition: ${({ theme }) => theme.durations.ms300}ms ease
       background-color;
     background-color: ${({ isBlur, isError, theme }) =>
       isError
@@ -50,7 +50,7 @@ export const SelectLabel = styled.label<{ isNotSelected: boolean }>`
   outline: 0;
   line-height: 16px;
   transition-property: color, top, font-size;
-  transition-duration: ${({ theme }) => theme.durations.default}ms;
+  transition-duration: ${({ theme }) => theme.durations.ms300}ms;
   transition-timing-function: ease;
 
   top: ${({ isNotSelected }) => (isNotSelected ? '0' : '-16px')};
@@ -67,7 +67,7 @@ export const Select = styled.select<SelectProps>`
   font-size: 16px;
   line-height: 24px;
   border: none;
-  transition: ${({ theme }) => theme.durations.default}ms ease
+  transition: ${({ theme }) => theme.durations.ms300}ms ease
     border-bottom-color;
   outline: none;
   cursor: pointer;

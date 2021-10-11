@@ -26,7 +26,7 @@ export const Button = styled.button<ButtonProps>`
   width: max-content;
 
   transition-property: background-color, border-color, color;
-  transition-duration: ${({ theme }) => theme.durations.default}ms;
+  transition-duration: ${({ theme }) => theme.durations.ms300}ms;
   transition-timing-function: ease;
 
   ${({

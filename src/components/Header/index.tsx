@@ -17,7 +17,7 @@ export const Header = observer(() => {
   return (
     <S.Header>
       <S.HeaderTitle>
-        <C.Title1>Plankton</C.Title1>
+        <C.Title1 weight="200">Plankton</C.Title1>
         <C.SupText>React + Mobx + SC</C.SupText>
       </S.HeaderTitle>
       <Button
@@ -27,8 +27,8 @@ export const Header = observer(() => {
         size={Button.size.lg}
       >
         <C.FAIcon
-          color={uiStore.isLight ? '#8c16c7' : '#c7a716'}
-          icon={uiStore.isLight ? faMoon : faSun}
+          color={uiStore.isLightTheme ? '#8c16c7' : '#c7a716'}
+          icon={uiStore.isLightTheme ? faMoon : faSun}
         />
       </Button>
     </S.Header>

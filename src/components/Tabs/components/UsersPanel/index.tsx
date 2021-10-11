@@ -23,7 +23,7 @@ export const UsersPanel = observer(() => {
   const getLocation = useCallback(
     (id: string): string => {
       const fullLocation = locationsStore.getFullLocation(id)
-      return `${fullLocation.country} | ${fullLocation.city}`
+      return fullLocation ? `${fullLocation.country} | ${fullLocation.city}` : id
     },
     [locationsStore]
   )

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import theme from 'styles/theme'
 
 interface StyledInputTextProps {
   isError: boolean
@@ -35,13 +34,13 @@ export const InputText = styled.div<StyledInputTextProps>`
     }
 
     :focus {
-      border-bottom-color: ${(props) =>
-        props.isError ? theme.colors.error : theme.colors.primary};
+      border-bottom-color: ${({ theme, isError }) => 
+        isError ? theme.colors.error : theme.colors.primary};
     }
 
     :not(:placeholder-shown),
     :focus {
-      & ~ label {
+      ~ label {
         top: -16px;
         font-size: 12px;
         outline: none;
@@ -53,11 +52,11 @@ export const InputText = styled.div<StyledInputTextProps>`
     }
 
     :disabled {
-      border-bottom-color: ${theme.colors.primaryLight};
+      border-bottom-color: ${({ theme }) => theme.colors.primaryLight};
     }
   }
 
-  & > label {
+  > label {
     position: absolute;
     left: 0;
     top: 0;
@@ -72,10 +71,10 @@ export const InputText = styled.div<StyledInputTextProps>`
     pointer-events: none;
 
     transition-property: color, top, font-size;
-    transition-duration: ${({ theme }) => theme.durations.default}ms;
+    transition-duration: ${({ theme }) => theme.durations.ms300}ms;
     transition-timing-function: ease;
   }
-  & > span {
+  > span {
     position: absolute;
     top: 37px;
     left: 0;

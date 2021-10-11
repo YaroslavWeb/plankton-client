@@ -5,8 +5,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { useStores } from '../src/hooks/useStores'
 import { stores } from '../src/stores'
 import theme from '../src/styles/theme'
-import MainStyles from '../src/styles/main'
-import FontStyles from '../src/styles/fonts'
+import GlobalStyles from '../src/styles/global'
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -35,11 +34,6 @@ export const parameters = {
     },
   },
 }
-
-const GlobalStyles = createGlobalStyle`
-  ${FontStyles}
-  ${MainStyles}
-`
 
 export const decorators = [
   (Story) => {

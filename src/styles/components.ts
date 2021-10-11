@@ -4,7 +4,6 @@ import {
   FontAwesomeIconProps,
 } from '@fortawesome/react-fontawesome'
 
-import theme from './theme'
 import { spin } from './animations'
 
 interface DividerProps {
@@ -15,7 +14,7 @@ interface DividerProps {
 export const Divider = styled.div<DividerProps>`
   height: ${(props) => props.height || 8}px;
 
-  @media ${theme.media.large} {
+  @media ${({ theme }) => theme.media.large} {
     height: ${(props) => props.heightMob || 4}px;
   }
 `
@@ -47,15 +46,11 @@ export const SupText = styled.sup`
 `
 
 interface FAIconProps extends FontAwesomeIconProps {
-  $animated?: boolean;
+  $animated?: boolean
 }
 
-export const FAIcon = styled(FontAwesomeIcon).attrs<FontAwesomeIconProps>(
-  ({ icon }) => ({
-    icon,
-  })
-)<FAIconProps>`
-  ${({ $animated = '' }) =>
+export const FAIcon = styled(FontAwesomeIcon)<FAIconProps>`
+  ${({ $animated = false }) =>
     $animated
       ? css`
           animation: ${spin} 4s infinite linear;

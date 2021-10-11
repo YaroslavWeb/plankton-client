@@ -9,6 +9,7 @@ import GlobalStyles from 'styles/global'
 
 const App = observer(() => {
   const { uiStore } = useStores()
+  
   return (
     <ThemeProvider theme={uiStore.theme}>
       <Routing />

@@ -1,17 +1,9 @@
 import { makeAutoObservable } from 'mobx'
 
 import { IModal, TypeModalData, ModalsEnum } from 'interfaces/ui'
-import theme, { darkTheme, lightTheme } from 'styles/theme'
+import { darkTheme, lightTheme, ThemeType } from 'styles/theme'
+import { DefaultTheme } from 'styled-components'
 
-const themeWithLight = {
-  ...theme,
-  colors: { ...theme.colors, ...lightTheme.colors },
-}
-
-const themeWithDark = {
-  ...theme,
-  colors: { ...theme.colors, ...darkTheme.colors },
-}
 
 export class UIStore {
   modal: IModal = {
@@ -20,12 +12,16 @@ export class UIStore {
     data: null,
   }
 
-  isLight = true
-  theme = themeWithLight
-
+  theme: DefaultTheme = lightTheme
+  
   constructor() {
     makeAutoObservable(this)
   }
+
+  get isLightTheme() {
+    return this.theme.type === ThemeType.light
+  }
+
 
   openModal(window: ModalsEnum, data: TypeModalData) {
     this.modal.window = window
@@ -37,17 +33,10 @@ export class UIStore {
     this.modal.isOpen = false
     setTimeout(() => {
       this.modal.window = null
-    }, theme.durations.default)
+    }, this.theme.durations.ms300)
   }
 
   toggleTheme() {
-    if (this.isLight) {
-      this.theme = themeWithDark
-      this.isLight = false
-      return
-    } else {
-      this.theme = themeWithLight
-      this.isLight = true
-    }
+    this.theme = this.isLightTheme ? darkTheme : lightTheme
   }
 }

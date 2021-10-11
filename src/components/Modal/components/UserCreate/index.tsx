@@ -10,6 +10,7 @@ import { useForm } from 'hooks/useForm'
 import { IUser } from 'interfaces/user'
 import { getUserAvatar } from 'helpers/getUserAvatar'
 
+
 export const UserCreate = () => {
   const { uiStore, usersStore, locationsStore } = useStores()
   const initialForm = { name: '', age: '', location: '' }

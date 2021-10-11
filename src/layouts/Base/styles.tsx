@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import theme from 'styles/theme'
 
 export const Layout = styled.div`
   min-height: 100vh;
@@ -9,7 +8,7 @@ export const Layout = styled.div`
   color: ${({ theme }) => theme.colors.font};
 
   transition-property: background-color, color;
-  transition-duration: ${({ theme }) => theme.durations.default}ms;
+  transition-duration: ${({ theme }) => theme.durations.ms300}ms;
   transition-timing-function: ease;
 `
 
@@ -18,7 +17,7 @@ export const Container = styled.main`
   padding: 16px;
   max-width: 1200px;
 
-  @media ${theme.media.medium} {
+  @media ${({ theme }) => theme.media.medium} {
     max-width: 100%;
   }
 `

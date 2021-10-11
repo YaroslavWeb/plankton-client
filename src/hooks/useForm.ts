@@ -1,19 +1,6 @@
 import { ChangeEvent, useCallback, useState } from 'react'
 
 import { IForm, IInitialForm } from 'interfaces/form'
-import theme from 'styles/theme'
-
-/*
- * Form control hook
- * @param {object} initialForm - initial values for inputs
- * @param {function} handler - the handler that should be triggered after validation form
- *
- * @returns:
- * {object} form - initialForm with additional parameters: value, name, error
- * {function} onSubmit - activates the handler after validation
- * {function} onChange - changes the value of a field by name
- * {function} cleanUp - clears form values
- */
 
 const convertToForm = <T extends IInitialForm>(initialForm: T): IForm<T> =>
   Object.entries(initialForm).reduce((acc, [key, value]) => {
@@ -27,6 +14,18 @@ const convertToForm = <T extends IInitialForm>(initialForm: T): IForm<T> =>
     }
   }, {} as IForm<T>)
 
+/*
+ * Form control hook
+ * @param {object} initialForm - initial values for inputs
+ * @param {function} handler - the handler that should be triggered after validation form
+ *
+ * @returns:
+ * {object} form - initialForm with additional parameters: value, name, error
+ * {function} onSubmit - activates the handler after validation
+ * {function} onChange - changes the value of a field by name
+ * {function} cleanUp - clears form values
+ */
+// 
 export const useForm = <T extends IInitialForm>(
   initialForm: T,
   handleSubmit
@@ -45,8 +44,12 @@ export const useForm = <T extends IInitialForm>(
 
   const validate = useCallback((fields) => {
     let isError = false
+
+    // Перебираем поля формы
     for (const key in fields) {
       const value = fields[key].value
+
+      // Если значение пустое
       if (!value.trim()) {
         fields[key].error = 'Invalid value'
         isError = true
@@ -54,6 +57,7 @@ export const useForm = <T extends IInitialForm>(
         fields[key].error = ''
       }
     }
+
     setForm(fields)
     return isError
   }, [])
@@ -62,7 +66,10 @@ export const useForm = <T extends IInitialForm>(
     const fields = { ...form }
     const isError = validate(fields)
 
+    // Если в полях найдена ошибка, то возвращаем ничего
     if (isError) return
+
+    // Собираем поля формы в объект { "поле": "значение" } 
     const values = Object.entries(fields).reduce(
       (acc, [key, { value }]) => ({
         ...acc,
@@ -70,28 +77,10 @@ export const useForm = <T extends IInitialForm>(
       }),
       {}
     )
+
+    // Передаём поля обработчику
     handleSubmit(values)
   }, [form, handleSubmit, validate])
 
-  const cleanUp = useCallback(
-    (delay = theme.durations.default) => {
-      const fields = Object.entries(form).reduce(
-        (acc, [key, values]) => ({
-          ...acc,
-          [key]: {
-            ...values,
-            value: '',
-            error: '',
-          },
-        }),
-        {} as IForm<T>
-      )
-      setTimeout(() => {
-        setForm(fields)
-      }, delay)
-    },
-    [form]
-  )
-
-  return { form, onSubmit, onChange, cleanUp }
+  return { form, onSubmit, onChange }
 }
