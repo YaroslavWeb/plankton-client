@@ -33,7 +33,7 @@ export const InfoPanel = observer(() => {
                   <C.FAIcon icon={faUserAlt} />
                 </td>
                 <td>
-                  <C.Title2 weight="300">
+                  <C.Title2 weight={300}>
                     {user.name} | {user.age} y.o.
                   </C.Title2>
                 </td>
@@ -44,7 +44,7 @@ export const InfoPanel = observer(() => {
                   <C.FAIcon icon={faMapMarkerAlt} />
                 </td>
                 <td>
-                  <C.Title2 weight="300">
+                  <C.Title2 weight={300}>
                     {getLocation(user.locationId)}
                   </C.Title2>
                 </td>
@@ -52,7 +52,7 @@ export const InfoPanel = observer(() => {
             </tbody>
           </table>
 
-          <C.Title2 weight="300"></C.Title2>
+          <C.Title2 weight={300}></C.Title2>
         </S.Card>
       ))}
     </S.Panel>

@@ -17,7 +17,7 @@ export const Header = observer(() => {
   return (
     <S.Header>
       <S.HeaderTitle>
-        <C.Title1 weight="200">Plankton</C.Title1>
+        <C.Title1 weight={200}>Plankton</C.Title1>
         <C.SupText>React + Mobx + SC</C.SupText>
       </S.HeaderTitle>
       <Button

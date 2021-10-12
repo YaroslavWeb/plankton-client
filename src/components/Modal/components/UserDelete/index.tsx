@@ -29,7 +29,7 @@ export function UserDelete() {
       <C.Divider height={32} heightMob={32} />
 
       <C.Divider />
-      <C.Title2 weight="300">You want to kill me?</C.Title2>
+      <C.Title2 weight={300}>You want to kill me?</C.Title2>
       <C.Avatar src={getUserAvatar(data.name, data.age, data.locationId)} />
       <C.Divider height={32} heightMob={32} />
 

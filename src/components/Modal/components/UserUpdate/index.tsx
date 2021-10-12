@@ -65,7 +65,7 @@ export function UserUpdate() {
         ))}
       </Select>
       <C.Divider />
-      <C.Title2 weight="300">Avatar</C.Title2>
+      <C.Title2 weight={300}>Avatar</C.Title2>
       <C.Avatar
         src={getUserAvatar(
           form.name.value,

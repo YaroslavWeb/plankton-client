@@ -20,7 +20,7 @@ export const Divider = styled.div<DividerProps>`
 `
 
 interface TitleProps {
-  weight?: '200' | '300' | '400' | '500' | '600' | '700'
+  weight?: 200 | 300 | 400 | 500 | 600 | 700
 }
 
 export const Title1 = styled.h1<TitleProps>`

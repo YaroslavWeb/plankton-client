@@ -1,18 +1,3 @@
-// Инлайн стили
-export const SimpleComponent = () => {
-  <div style={{backgroundColor: '#fcba03', borderRadius: 5}}>
-    <h1 style={{fontWeight: 300}}>
-      Simple Component
-    </h1>
-    <p style={{borderTop: '1px solid #69d6db'}}>
-      I am just a simple component
-    </p>
-  </div>
-}
-
-// _______________________________
-
-// Стилизованные компоненты
 import styled from 'styled-components'
 
 const Container = styled.div`

@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
-export const BaseWindow = styled.div.attrs(() => ({
-  onClick: (e) => e.stopPropagation(),
-}))`
+export const BaseWindow = styled.div`
   position: relative;
   background-color: ${({ theme }) => theme.colors.bg};
   color: ${({ theme }) => theme.colors.font};

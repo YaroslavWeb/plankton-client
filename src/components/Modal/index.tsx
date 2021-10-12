@@ -34,9 +34,9 @@ export const Modal = observer(() => {
     : () => <></>
 
   return (
-    <S.Modal isOpen={uiStore.modal.isOpen} onClick={handleClose}>
+    <S.Modal isOpen={uiStore.modal.isOpen}>
+      <S.Overlay onClick={handleClose} />
       <ModalWindow />
-      {/* <Overlay /> */}
     </S.Modal>
   )
 })

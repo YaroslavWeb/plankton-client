@@ -26,38 +26,38 @@ export const HomePage = () => {
         <C.Divider />
         <ul>
           <li>
-            <C.Text1 weight="300">
+            <C.Text1 weight={300}>
               <C.FAIcon icon={faReact} color="#3265a8" /> React
             </C.Text1>
           </li>
           <li>
-            <C.Text1 weight="300">
+            <C.Text1 weight={300}>
               <C.FAIcon icon={faReact} color="#32a855" /> MobX
             </C.Text1>
           </li>
           <li>
-            <C.Text1 weight="300">
+            <C.Text1 weight={300}>
               <C.FAIcon icon={faReact} color="#6532a8" /> TypeScript
             </C.Text1>
           </li>
           <li>
-            <C.Text1 weight="300">
+            <C.Text1 weight={300}>
               <C.FAIcon icon={faReact} color="#a032a8" /> Styled Components
             </C.Text1>
           </li>
           <li>
-            <C.Text1 weight="300">
+            <C.Text1 weight={300}>
               <C.FAIcon icon={faReact} color="#c521aa" /> Storybook
             </C.Text1>
           </li>
           <li>
-            <C.Text1 weight="300">
+            <C.Text1 weight={300}>
               <C.FAIcon icon={faReact} color="#f57e33" /> Avatar generator -{' '}
               <a href="https://avatars.dicebear.com">DiceBear Avatars </a>
             </C.Text1>
           </li>
           <li>
-            <C.Text1 weight="300">
+            <C.Text1 weight={300}>
               <C.FAIcon icon={faReact} color="#3e8872" /> Icons -{' '}
               <a href="https://fontawesome.com/">Font Awesome</a>
             </C.Text1>
