@@ -25,7 +25,7 @@ const convertToForm = <T extends IInitialForm>(initialForm: T): IForm<T> =>
  * {function} onChange - changes the value of a field by name
  * {function} cleanUp - clears form values
  */
-// 
+//
 export const useForm = <T extends IInitialForm>(
   initialForm: T,
   handleSubmit
@@ -69,7 +69,7 @@ export const useForm = <T extends IInitialForm>(
     // Если в полях найдена ошибка, то возвращаем ничего
     if (isError) return
 
-    // Собираем поля формы в объект { "поле": "значение" } 
+    // Собираем поля формы в объект { "поле": "значение" }
     const values = Object.entries(fields).reduce(
       (acc, [key, { value }]) => ({
         ...acc,
@@ -82,5 +82,20 @@ export const useForm = <T extends IInitialForm>(
     handleSubmit(values)
   }, [form, handleSubmit, validate])
 
-  return { form, onSubmit, onChange }
+  const cleanUp = useCallback(() => {
+    const fields = Object.entries(form).reduce(
+      (acc, [key, values]) => ({
+        ...acc,
+        [key]: {
+          ...values,
+          value: '',
+          error: '',
+        },
+      }),
+      {} as IForm<T>
+    )
+    setForm(fields)
+  }, [form])
+
+  return { form, onSubmit, onChange, cleanUp }
 }

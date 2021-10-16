@@ -1,8 +1,8 @@
 import { makeAutoObservable } from 'mobx'
+import { DefaultTheme } from 'styled-components'
 
 import { IModal, TypeModalData, ModalsEnum } from 'interfaces/ui'
 import { darkTheme, lightTheme, ThemeType } from 'styles/theme'
-import { DefaultTheme } from 'styled-components'
 
 
 export class UIStore {

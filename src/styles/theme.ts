@@ -9,7 +9,7 @@ const theme = {
 
   colors: {
     primary: '#7986cb',
-    primaryDark: '#5c6bc0', //primaryDarken
+    primaryDark: '#5c6bc0',
     primaryLight: '#9fa8da',
     secondary: '#2b2b2b',
     secondaryDark: '#1f1f1f',
@@ -27,6 +27,7 @@ const theme = {
     error: '#f46666',
     overlay: '#383838',
 
+    // themed colors
     bg: '#ffffff',
     font: '#000000',
   },
@@ -58,6 +59,7 @@ const theme = {
     modal: 100,
   },
 }
+export type ThemeBase = typeof theme
 
 export const lightTheme = {
   ...theme,
@@ -80,5 +82,3 @@ export const darkTheme = {
     font: '#E5E4E8',
   },
 }
-
-export type ThemeBase = typeof theme
