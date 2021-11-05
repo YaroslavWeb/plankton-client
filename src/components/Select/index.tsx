@@ -51,7 +51,7 @@ export const Select = ({
         isBlur={isBlur}
         isError={isError}
       >
-        <S.Option disabled value="" style={{ display: 'none' }} />
+        <option disabled value="" style={{ display: 'none' }} />
         {children}
       </S.Select>
       {error ? <span>{error}</span> : null}
@@ -64,5 +64,5 @@ interface OptionProps {
 }
 
 export const Option = ({ children, value }: PropsWithChildren<OptionProps>) => {
-  return <S.Option value={value}>{children}</S.Option>
+  return <option value={value}>{children}</option>
 }

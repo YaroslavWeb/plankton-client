@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import { getTransition } from 'helpers/styled'
 interface SelectProps {
   isBlur: boolean
   isError: boolean
@@ -49,12 +50,16 @@ export const SelectLabel = styled.label<{ isNotSelected: boolean }>`
   position: absolute;
   outline: 0;
   line-height: 16px;
-  transition-property: color, top, font-size;
-  transition-duration: ${({ theme }) => theme.durations.ms300}ms;
-  transition-timing-function: ease;
 
-  top: ${({ isNotSelected }) => (isNotSelected ? '0' : '-16px')};
-  font-size: ${({ isNotSelected }) => (isNotSelected ? '16px' : '12px')};
+  ${({ theme }) =>
+    getTransition(theme.durations.ms300, [
+      'top',
+      'font-size',
+      'color',
+    ])}
+
+  top: ${({ isNotSelected }) => (isNotSelected ? '4' : '-16')}px;
+  font-size: ${({ isNotSelected }) => (isNotSelected ? '16' : '12')}px;
 `
 
 export const Select = styled.select<SelectProps>`
@@ -85,8 +90,4 @@ export const Select = styled.select<SelectProps>`
   &::-ms-expand {
     display: none;
   }
-`
-
-export const Option = styled.option`
-  cursor: pointer;
 `
