@@ -13,17 +13,19 @@ export const Tabs = ({ children }: AppTabsProps) => {
   const [activeTab, setActiveTab] = useState<ReactElement>()
 
   useEffect(() => {
-    setActiveTab(children.find((item) => "#"+item.props.id === hash) || children[0])
+    setActiveTab(
+      children.find((item) => '#' + item.props.id === hash) || children[0]
+    )
   }, [children, hash])
 
   return (
     <S.Tabs>
       <S.TabBar>
-        {children.map((item) => (
+        {children.map((item, idx) => (
           <S.TabBarItem
-            to={'#'+item.props.id}
+            to={'#' + item.props.id}
             key={item.props.id}
-            $isActive={hash === '#'+item.props.id}
+            $isActive={hash === '#' + item.props.id || (idx === 0 && hash === '')}
             onClick={() => setActiveTab(item)}
           >
             {item.props.tabTitle}

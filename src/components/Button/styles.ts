@@ -1,4 +1,4 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { StyledVariants } from 'interfaces/styled'
 import { getTransition } from 'helpers/styled'
