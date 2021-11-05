@@ -12,8 +12,6 @@ import {
 } from 'components/Tabs'
 
 export const HomePage = () => {
-
-
   return (
     <>
       <div>
@@ -66,16 +64,16 @@ export const HomePage = () => {
       </div>
       <C.Divider height={48} heightMob={24} />
       <Tabs>
-        <TabPanel id="tab1" tabTitle="INFO" active>
+        <TabPanel id="info" tabTitle="INFO">
           <InfoPanel />
         </TabPanel>
-        <TabPanel id="tab2" tabTitle="USERS">
+        <TabPanel id="users" tabTitle="USERS">
           <UsersPanel />
         </TabPanel>
-        <TabPanel id="tab3" tabTitle="LOCATIONS">
+        <TabPanel id="locations" tabTitle="LOCATIONS">
           <LocationsPanel />
         </TabPanel>
-        <TabPanel id="tab4" tabTitle="JSON">
+        <TabPanel id="json" tabTitle="JSON">
           <StructurePanel />
         </TabPanel>
       </Tabs>

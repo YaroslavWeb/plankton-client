@@ -1,12 +1,5 @@
 import { IUser } from './user'
 import { ILocation } from './location'
-import { DefaultTheme } from 'styled-components'
-
-export interface IUI {
-  modal: IModal
-  isLight: boolean
-  theme: DefaultTheme
-}
 
 export interface IModal {
   isOpen: boolean

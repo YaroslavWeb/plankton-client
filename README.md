@@ -21,9 +21,3 @@ storybook - [plankton-storybook](https://plankton-storybook.herokuapp.com/)
 
 - View, сreate and modify: user and location data.
 - Switch theme mode by button in header to light and dark.
-
-/src
-/styles
-components.ts
-global.ts
-theme.ts

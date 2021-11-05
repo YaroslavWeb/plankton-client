@@ -23,7 +23,7 @@ export const UsersPanel = observer(() => {
   const getLocation = useCallback(
     (id: string): string => {
       const fullLocation = locationsStore.getFullLocation(id)
-      return fullLocation ? `${fullLocation.country} | ${fullLocation.city}` : id
+      return fullLocation ? `${fullLocation.country} | ${fullLocation.city}` : '-'
     },
     [locationsStore]
   )
@@ -33,7 +33,7 @@ export const UsersPanel = observer(() => {
       <S.UsersTable>
         <thead>
           <tr>
-            <th># ({usersStore.totalUsers})</th>
+            <th>№ ({usersStore.totalUsers})</th>
             <th>Name</th>
             <th>Age</th>
             <th>Location</th>

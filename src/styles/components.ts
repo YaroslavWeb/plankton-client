@@ -12,10 +12,10 @@ interface DividerProps {
 }
 
 export const Divider = styled.div<DividerProps>`
-  height: ${(props) => props.height || 8}px;
+  height: ${({ height = 8 }) => height}px;
 
   @media ${({ theme }) => theme.media.large} {
-    height: ${(props) => props.heightMob || 4}px;
+    height: ${({ heightMob = 4 }) => heightMob}px;
   }
 `
 
@@ -25,19 +25,19 @@ interface TitleProps {
 
 export const Title1 = styled.h1<TitleProps>`
   font-size: 24px;
-  font-weight: ${(props) => props.weight || 700};
+  font-weight: ${({ weight }) => weight || 700};
 `
 
 export const Title2 = styled.h2<TitleProps>`
   font-size: 18px;
-  font-weight: ${(props) => props.weight || 700};
+  font-weight: ${({ weight }) => weight || 700};
 `
 
 type TextProps = TitleProps
 
 export const Text1 = styled.span<TextProps>`
   font-size: 18px;
-  font-weight: ${(props) => props.weight || 400};
+  font-weight: ${({ weight }) => weight || 400};
 `
 
 export const SupText = styled.sup`
@@ -50,12 +50,14 @@ interface FAIconProps extends FontAwesomeIconProps {
 }
 
 export const FAIcon = styled(FontAwesomeIcon)<FAIconProps>`
-  ${({ $animated = false }) =>
+  ${({ $animated }) =>
     $animated
       ? css`
           animation: ${spin} 4s infinite linear;
         `
-      : css``}
+      : css`
+          animation: none;
+        `}
 `
 
 export const Avatar = styled.img`

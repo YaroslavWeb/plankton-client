@@ -8,7 +8,7 @@ import { Select, Option } from 'components/Select'
 import { IUser } from 'interfaces/user'
 import { useForm } from 'hooks/useForm'
 import { useStores } from 'hooks/useStores'
-import { getUserAvatar } from 'helpers/getUserAvatar'
+import { getUserAvatar } from 'helpers/avatars'
 
 export function UserUpdate() {
   const { uiStore, locationsStore, usersStore } = useStores()
@@ -17,7 +17,7 @@ export function UserUpdate() {
   const initialForm = {
     name: data.name,
     age: data.age,
-    location: data.locationId,
+    location: locationsStore.getFullLocation(data.locationId)?.id || '',
   }
 
   const handleClose = () => {

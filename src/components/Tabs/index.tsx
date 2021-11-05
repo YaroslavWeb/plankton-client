@@ -1,4 +1,5 @@
 import { useEffect, ReactElement, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 import * as S from './styles'
 
@@ -8,19 +9,21 @@ interface AppTabsProps {
 
 // Controls the display of transmitted panels and shows the active
 export const Tabs = ({ children }: AppTabsProps) => {
+  const { hash } = useLocation()
   const [activeTab, setActiveTab] = useState<ReactElement>()
 
   useEffect(() => {
-    setActiveTab(children.find((item) => item.props.active))
-  }, [children])
+    setActiveTab(children.find((item) => "#"+item.props.id === hash) || children[0])
+  }, [children, hash])
 
   return (
     <S.Tabs>
       <S.TabBar>
         {children.map((item) => (
           <S.TabBarItem
+            to={'#'+item.props.id}
             key={item.props.id}
-            active={activeTab === item}
+            $isActive={hash === '#'+item.props.id}
             onClick={() => setActiveTab(item)}
           >
             {item.props.tabTitle}

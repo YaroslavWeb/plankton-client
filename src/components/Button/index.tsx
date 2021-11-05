@@ -29,13 +29,13 @@ export interface ButtonProps {
   color?: ButtonColor
 }
 
-function ButtonComponent({
+const ButtonComponent = ({
   children,
   onClick,
   variant = ButtonVariant.solid,
   size = ButtonSize.md,
   color = ButtonColor.primary,
-}: PropsWithChildren<ButtonProps>) {
+}: PropsWithChildren<ButtonProps>) => {
   return (
     <S.Button onClick={onClick} variant={variant} size={size} color={color}>
       <span>{children}</span>

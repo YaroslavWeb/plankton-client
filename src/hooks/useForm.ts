@@ -45,11 +45,9 @@ export const useForm = <T extends IInitialForm>(
   const validate = useCallback((fields) => {
     let isError = false
 
-    // Перебираем поля формы
     for (const key in fields) {
       const value = fields[key].value
 
-      // Если значение пустое
       if (!value.trim()) {
         fields[key].error = 'Invalid value'
         isError = true
@@ -66,10 +64,8 @@ export const useForm = <T extends IInitialForm>(
     const fields = { ...form }
     const isError = validate(fields)
 
-    // Если в полях найдена ошибка, то возвращаем ничего
     if (isError) return
 
-    // Собираем поля формы в объект { "поле": "значение" }
     const values = Object.entries(fields).reduce(
       (acc, [key, { value }]) => ({
         ...acc,
@@ -78,7 +74,6 @@ export const useForm = <T extends IInitialForm>(
       {}
     )
 
-    // Передаём поля обработчику
     handleSubmit(values)
   }, [form, handleSubmit, validate])
 

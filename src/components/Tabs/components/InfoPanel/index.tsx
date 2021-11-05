@@ -6,7 +6,7 @@ import * as S from './styles'
 import * as C from 'styles/components'
 import { useStores } from 'hooks/useStores'
 import { IUser } from 'interfaces/user'
-import { getUserAvatar } from 'helpers/getUserAvatar'
+import { getUserAvatar } from 'helpers/avatars'
 
 export const InfoPanel = observer(() => {
   const { usersStore, locationsStore } = useStores()
@@ -14,7 +14,7 @@ export const InfoPanel = observer(() => {
   const getLocation = useCallback(
     (id: string): string => {
       const fullLocation = locationsStore.getFullLocation(id)
-      return fullLocation ? `${fullLocation.country} | ${fullLocation.city}` : id
+      return fullLocation ? `${fullLocation.country} | ${fullLocation.city}` : '-'
     },
     [locationsStore]
   )

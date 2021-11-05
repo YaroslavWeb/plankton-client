@@ -19,7 +19,7 @@ export const BaseWindowClose = styled.span`
   font-weight: 300;
   cursor: pointer;
   user-select: none;
-  transition: ${({ theme }) => theme.durations.ms300}ms linear color;
+  transition: color ${({ theme }) => theme.durations.ms300}ms linear;
 
   :active {
     color: ${({ theme }) => theme.colors.primary};

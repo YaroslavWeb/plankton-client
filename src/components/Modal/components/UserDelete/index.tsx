@@ -5,7 +5,7 @@ import * as C from 'styles/components'
 import { useStores } from 'hooks/useStores'
 import { Button } from 'components/Button'
 import { IUser } from 'interfaces/user'
-import { getUserAvatar } from 'helpers/getUserAvatar'
+import { getUserAvatar } from 'helpers/avatars'
 
 export function UserDelete() {
   const { uiStore, usersStore } = useStores()

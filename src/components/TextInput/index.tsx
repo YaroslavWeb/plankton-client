@@ -41,7 +41,7 @@ export const InputTextComponent = (props: InputTextProps) => {
         disabled={disabled}
         onChange={onChange}
         onBlur={onBlur}
-        maxLength={maxLength}
+        maxLength={maxLength || 16}
         placeholder={placeholder}
         min={min}
         max={max}

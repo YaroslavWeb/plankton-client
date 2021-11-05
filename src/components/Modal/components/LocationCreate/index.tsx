@@ -1,3 +1,4 @@
+import { v4 as uuid } from 'uuid'
 import { faCat } from '@fortawesome/free-solid-svg-icons'
 
 import * as S from './styles'
@@ -19,7 +20,7 @@ export const LocationCreate = () => {
   const handleCreate = (values: typeof initialForm) => {
     const { country, city } = values
     const location: ILocation = {
-      id: String(locationsStore.totalLocations + 1),
+      id: uuid(),
       country,
       city,
     }

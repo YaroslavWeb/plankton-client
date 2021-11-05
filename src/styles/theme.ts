@@ -1,12 +1,7 @@
-export enum ThemeType  {
-  default = "default",
-  light = "light",
-  dark = "dark"
-} 
+import { DefaultTheme } from 'styled-components'
+import { ThemeEnum } from 'interfaces/styled'
 
-const theme = {
-  type: ThemeType.default,
-
+const baseTheme = {
   colors: {
     primary: '#7986cb',
     primaryDark: '#5c6bc0',
@@ -26,10 +21,6 @@ const theme = {
     
     error: '#f46666',
     overlay: '#383838',
-
-    // themed colors
-    bg: '#ffffff',
-    font: '#000000',
   },
 
   // Source: https://getbootstrap.com/docs/4.0/layout/grid/
@@ -59,25 +50,25 @@ const theme = {
     modal: 100,
   },
 }
-export type ThemeBase = typeof theme
 
-export const lightTheme = {
-  ...theme,
-  type: ThemeType.light,
+
+export const lightTheme: DefaultTheme = {
+  ...baseTheme,
+  type: ThemeEnum.light,
 
   colors: {
-    ...theme.colors,
+    ...baseTheme.colors,
     bg: '#E5E4E8',
     font: '#19191B',
   },
 }
 
-export const darkTheme = {
-  ...theme,
-  type: ThemeType.dark,
+export const darkTheme: DefaultTheme = {
+  ...baseTheme,
+  type: ThemeEnum.dark,
 
   colors: {
-    ...theme.colors,
+    ...baseTheme.colors,
     bg: '#19191B',
     font: '#E5E4E8',
   },

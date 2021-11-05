@@ -25,7 +25,7 @@ export const LocationsPanel = observer(() => {
       <S.LocationsTable>
         <thead>
           <tr>
-            <th># ({locationsStore.totalLocations})</th>
+            <th>№ ({locationsStore.totalLocations})</th>
             <th>Country</th>
             <th>City</th>
             <th>

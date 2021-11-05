@@ -2,8 +2,16 @@ import { makeAutoObservable } from 'mobx'
 import { DefaultTheme } from 'styled-components'
 
 import { IModal, TypeModalData, ModalsEnum } from 'interfaces/ui'
-import { darkTheme, lightTheme, ThemeType } from 'styles/theme'
+import { ThemeEnum } from 'interfaces/styled'
+import { darkTheme, lightTheme } from 'styles/theme'
 
+const getTheme = () => {
+  const storageThemeType = localStorage.getItem('theme-type')
+  if(storageThemeType === ThemeEnum.dark){
+    return darkTheme
+  }
+  return lightTheme
+}
 
 export class UIStore {
   modal: IModal = {
@@ -16,10 +24,11 @@ export class UIStore {
   
   constructor() {
     makeAutoObservable(this)
+    this.theme = getTheme() 
   }
 
   get isLightTheme() {
-    return this.theme.type === ThemeType.light
+    return this.theme.type === ThemeEnum.light
   }
 
 
@@ -38,5 +47,6 @@ export class UIStore {
 
   toggleTheme() {
     this.theme = this.isLightTheme ? darkTheme : lightTheme
+    localStorage.setItem('theme-type', this.theme.type)
   }
 }

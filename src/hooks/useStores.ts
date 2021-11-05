@@ -1,7 +1,7 @@
-import React from 'react'
+import { useContext, createContext} from 'react'
 
 import { RootStore, stores } from 'stores'
 
 export function useStores() {
-  return React.useContext<RootStore>(React.createContext<RootStore>(stores))
+  return useContext<RootStore>(createContext<RootStore>(stores))
 }

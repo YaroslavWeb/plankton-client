@@ -1,10 +1,10 @@
 import { Provider } from 'mobx-react'
 import { BrowserRouter } from 'react-router-dom'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 
 import { useStores } from '../src/hooks/useStores'
 import { stores } from '../src/stores'
-import theme from '../src/styles/theme'
+import { lightTheme } from '../src/styles/theme'
 import GlobalStyles from '../src/styles/global'
 
 export const parameters = {
@@ -20,11 +20,11 @@ export const parameters = {
     values: [
       {
         name: 'light',
-        value: theme.colors.white,
+        value: lightTheme.colors.white,
       },
       {
         name: 'dark',
-        value: theme.colors.black,
+        value: lightTheme.colors.black,
       },
     ],
   },

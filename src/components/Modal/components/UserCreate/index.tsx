@@ -1,3 +1,4 @@
+import { v4 as uuid } from 'uuid'
 import { faDragon } from '@fortawesome/free-solid-svg-icons'
 
 import * as S from './styles'
@@ -8,7 +9,7 @@ import { Select, Option } from 'components/Select'
 import { useStores } from 'hooks/useStores'
 import { useForm } from 'hooks/useForm'
 import { IUser } from 'interfaces/user'
-import { getUserAvatar } from 'helpers/getUserAvatar'
+import { getUserAvatar } from 'helpers/avatars'
 
 
 export const UserCreate = () => {
@@ -23,7 +24,7 @@ export const UserCreate = () => {
     const { name, age, location } = values
 
     const newUser: IUser = {
-      id: String(usersStore.totalUsers + 1),
+      id: uuid(),
       name,
       age,
       locationId: location,
@@ -51,6 +52,7 @@ export const UserCreate = () => {
         type="number"
         min={16}
         max={100}
+        maxLength={3}
       />
       <C.Divider />
       <Select {...form.location} onChange={onChange} placeholder="Location">
