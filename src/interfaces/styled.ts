@@ -6,8 +6,6 @@ export enum ThemeEnum  {
 } 
 
 export interface ITheme {
-  type: ThemeEnum
-
   colors: {
     primary: string,
     primaryDark: string,

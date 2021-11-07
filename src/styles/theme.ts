@@ -1,7 +1,7 @@
 import { DefaultTheme } from 'styled-components'
-import { ThemeEnum } from 'interfaces/styled'
+import { ThemeEnum, ITheme } from 'interfaces/styled'
 
-const baseTheme = {
+const baseTheme: ITheme = {
   colors: {
     primary: '#7986cb',
     primaryDark: '#5c6bc0',
@@ -21,6 +21,9 @@ const baseTheme = {
     
     error: '#f46666',
     overlay: '#383838',
+
+    bg: '#E5E4E8',
+    font: '#19191B',
   },
 
   // Source: https://getbootstrap.com/docs/4.0/layout/grid/
