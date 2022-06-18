@@ -7,7 +7,7 @@ export const Routing = () => {
   return (
     <Switch>
       <BaseLayout>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="*" component={HomePage} />
       </BaseLayout>
     </Switch>
   )

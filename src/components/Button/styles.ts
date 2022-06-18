@@ -33,7 +33,11 @@ export const Button = styled.button<ButtonProps>`
       'color',
     ])}
 
-  ${({ variant = ButtonVariant.solid, color = ButtonColor.primary, theme }) => {
+  ${({ 
+      variant = ButtonVariant.solid,
+      color = ButtonColor.primary,
+      theme
+    }) => {
     const themeColor = theme.colors[color]
     const themeColorLight = theme.colors[color + 'Light']
     const themeColorDark = theme.colors[color + 'Dark']
