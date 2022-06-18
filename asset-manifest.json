@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/plankton-client/static/js/main.ea6df598.chunk.js",
+    "main.js.map": "/plankton-client/static/js/main.ea6df598.chunk.js.map",
+    "runtime-main.js": "/plankton-client/static/js/runtime-main.52b1cb10.js",
+    "runtime-main.js.map": "/plankton-client/static/js/runtime-main.52b1cb10.js.map",
+    "static/js/2.e0a5418c.chunk.js": "/plankton-client/static/js/2.e0a5418c.chunk.js",
+    "static/js/2.e0a5418c.chunk.js.map": "/plankton-client/static/js/2.e0a5418c.chunk.js.map",
+    "index.html": "/plankton-client/index.html",
+    "static/js/2.e0a5418c.chunk.js.LICENSE.txt": "/plankton-client/static/js/2.e0a5418c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.52b1cb10.js",
+    "static/js/2.e0a5418c.chunk.js",
+    "static/js/main.ea6df598.chunk.js"
+  ]
+}
