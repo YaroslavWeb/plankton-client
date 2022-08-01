@@ -4,7 +4,7 @@
 
 ## Live Demo
 
-client - [plankton-client](https://plankton-client.herokuapp.com/)
+client - [plankton-client](https://yaroslavweb.github.io/plankton-client/)
 storybook - [plankton-storybook](https://plankton-storybook.herokuapp.com/)
 
 ## Stack
